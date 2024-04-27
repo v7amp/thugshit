@@ -1,0 +1,42 @@
+local main = Library:Create({title = "skibidihook1337"})
+local espview = main:CreateEspView()
+local watermark = main:CreateWatermark({text = "skibidihook1337 | build: private | ft. sigma toilet", visible = true})
+local notification = main:CreateNotification({})
+
+local tab1 = main:CreateTab({title = "Aiming"})
+local tab2 = main:CreateTab({title = "Visuals"})
+local tab3 = main:CreateTab({title = "Misc"})
+
+local semitab1 = tab1:CreateSemiTab({size = "283"})
+local semitab2 = tab1:CreateSemiTab({size = "283"})
+
+local section = semitab1:CreateSection({position = "left"})
+local section2 = semitab2:CreateSection({position = "left"})
+local section3 = semitab2:CreateSection({position = "right"})
+
+
+local hotkey = section:CreateHotkey()
+local checkbox = section:CreateToggle({callback = function(v) print(v) end})
+local dropdown = section:CreateDropdown({callback = function(v) print(v) end})
+dropdown:Add("Head", 1)
+dropdown:Add("Uppertorso", 2)
+dropdown:Add("sigma", 3)
+local button = section:CreateButton({})
+local slider = section:CreateSlider()
+local label = section:CreateLabel({title = "im so skibidi"})
+local warning = section:CreateWarning({title = "im so skibidi"})
+local Textbox = section:CreateTextbox({title = "Testt", placeholder = "Testtt", callback = function(v) print(v) end})
+
+section:CreateSeparator()
+section:CreateColoredSeparator()
+
+local watermarktoggle = section2:CreateToggle({title = "Show Watermark", callback = function(v) watermark:WatermarkVisible(v) end}) 
+
+local boxtoggle = section3:CreateToggle({title = "Bounding Box", callback = function(v) espview:CreateBox(v) end})
+local boxfilltoggle = section3:CreateToggle({title = "Bounding Box Fill", callback = function(v) espview:CreateBoxFill(v) end})
+local healthbartoggle = section3:CreateToggle({title = "Health Bar", callback = function(v) espview:CreateHealthBar(v) end})
+local armorbartoggle = section3:CreateToggle({title = "Armor Bar", callback = function(v) espview:CreateArmorBar(v) end})
+local nametoggle = section3:CreateToggle({title = "Name Esp", callback = function(v) espview:CreateName(v) end})
+local weapontoggle = section3:CreateToggle({title = "Weapon Esp", callback = function(v) espview:CreateWeapon(v) end})
+local distancetoggle = section3:CreateToggle({title = "Distance Esp", callback = function(v) espview:CreateDistance(v) end})
+local flagstoggle = section3:CreateToggle({title = "Flag Esp", callback = function(v) espview:CreateFlags(v) end})
